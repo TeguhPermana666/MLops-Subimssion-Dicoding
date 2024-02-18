@@ -15,25 +15,10 @@ Username dicoding: teguhpermana666
 Pencegahan Masalah Kesehatan: Stres yang tidak dikelola dengan baik dapat berdampak negatif pada kesehatan fisik dan mental. Dengan menggunakan model ini, individu dapat mengambil tindakan preventif untuk menghindari masalah kesehatan yang dapat timbul akibat stres.
 Penyesuaian Perilaku: Model ini juga dapat membantu individu untuk membuat perubahan perilaku yang positif. Misalnya, jika model menunjukkan bahwa tingkat stres lebih tinggi setelah kurang tidur, individu dapat lebih memprioritaskan tidur yang cukup.|
 | Metode pengolahan | Pada data Human Stress Prediction, terdapat tujuh feature, tetapi yang digunakan pada proyek ini hanya feature text dan label, sehingga features selain itu akan dihapus, kemudian dilakukan split data training dan eval menjadi rasio 80:20, dan mengubah data feature menjadi lowercase serta feature label menjadi integer. Adapun tahapan metode pengolahan pipeline diantaranya
-- Data Ingestion:
-Data dikumpulkan dari berbagai sumber seperti survei, sensor wearable, dan rekaman aktivitas harian.
-Data kemudian dibersihkan dan dipersiapkan untuk analisis lebih lanjut. Ini termasuk langkah-langkah seperti penghapusan nilai yang hilang, normalisasi data, dan pengkodean kategori jika diperlukan.
-
-- Exploratory Data Analysis (EDA):
-Data dieksplorasi untuk memahami karakteristiknya, korelasi antar variabel, dan pola yang mungkin ada.
-Visualisasi data sering digunakan di sini untuk membantu pemahaman.
-
-- Pemodelan Machine Learning:
-Data dibagi menjadi set pelatihan dan pengujian.
-Model machine learning dikembangkan dan dilatih menggunakan set pelatihan.
-Model kemudian diuji menggunakan set pengujian untuk mengevaluasi kinerjanya.
-
-- Evaluasi Model:
-Kinerja model dievaluasi menggunakan metrik yang relevan seperti akurasi, presisi, recall, atau F1-score, tergantung pada kebutuhan proyek.
-Model dapat disesuaikan dan dievaluasi kembali jika diperlukan untuk meningkatkan kinerjanya.
-
-- Implementasi dan Penyesuaian:
-Setelah model dianggap memadai, itu dapat diimplementasikan dalam lingkungan produksi atau digunakan untuk memberikan rekomendasi dan solusi kepada pengguna akhir.Ada juga proses penyesuaian dan pemeliharaan model secara berkala untuk memastikan bahwa itu tetap relevan dan akurat seiring waktu.|
+Data Ingestion:Data dikumpulkan dari berbagai sumber seperti survei, sensor wearable, dan rekaman aktivitas harian.
+Data kemudian dibersihkan dan dipersiapkan untuk analisis lebih lanjut. Ini termasuk langkah-langkah seperti penghapusan nilai yang hilang, normalisasi data, dan pengkodean kategori jika diperlukan.Exploratory Data Analysis (EDA):Data dieksplorasi untuk memahami karakteristiknya, korelasi antar variabel, dan pola yang mungkin ada.
+Visualisasi data sering digunakan di sini untuk membantu pemahaman.Pemodelan Machine Learning:Data dibagi menjadi set pelatihan dan pengujian.
+Model machine learning dikembangkan dan dilatih menggunakan set pelatihan.Model kemudian diuji menggunakan set pengujian untuk mengevaluasi kinerjanya.Evaluasi Model:Kinerja model dievaluasi menggunakan metrik yang relevan seperti akurasi, presisi, recall, atau F1-score, tergantung pada kebutuhan proyek.Model dapat disesuaikan dan dievaluasi kembali jika diperlukan untuk meningkatkan kinerjanya. Implementasi dan Penyesuaian:Setelah model dianggap memadai, itu dapat diimplementasikan dalam lingkungan produksi atau digunakan untuk memberikan rekomendasi dan solusi kepada pengguna akhir.Ada juga proses penyesuaian dan pemeliharaan model secara berkala untuk memastikan bahwa itu tetap relevan dan akurat seiring waktu.|
 | Arsitektur model | Arsitektur model yang digunakan yaitu model embedding dimana terdiri dari vectorize_layer, kemudian layer embedding dengan dimensi embedding yaitu 16, setelah itu layer AveragePooling1D karena data merupakan bentuk text, kemudian layer dense 64, 32 dengan activation relu dan sigmoid karena akan dilakukan klasifikasi antar dua label. Loss yang digunakan binary_crossentropy dengan optimizer Adam dan metrik BinaryAccuray |
 | Metrik evaluasi | Metrik evaluasi yang digunakan yaitu ExampleCount, AUC, FalsePositives, TruePositives, FalseNegatives, TrueNegatives, dan BinaryAccuracy |
 | Performa model | Evaluasi model diperoleh yaitu AUC sebesar 82%, kemudian example_count 575, dengan BinaryAccuracy 75%, dan loss sebesar 1.364. Untuk False Negatives 68, False Positive 75, True Negative 201 dan True Positive 231. Model yang telah dibuat dapat dilakukan peningkatan performa, karena model belum cukup baik karena BinaryAccuracy masih dibawah 80% |
